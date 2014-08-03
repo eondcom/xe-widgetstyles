@@ -1,0 +1,18 @@
+/************************************************************
+Common
+************************************************************/
+div.eond_simpleWidgetStyle { position:relative;margin-bottom:20px; overflow:hidden; *zoom:1;}
+div.eond_simpleWidgetStyle h2 { margin:0 0 10px 0;  border-bottom:2px solid #e53c20; color:#888 /* padding:0 0 5px 0; font:bold 16px "Malgun Gothic", AppleGothic, Dotum, Sans-serif; */}
+div.eond_simpleWidgetStyle a.widgetMoreLink { position:absolute; top:8px; right:0; font:11px Dotum; text-decoration:none;  color:#888;}
+div.eond_simpleWidgetStyle.black h2 { color:#333; }
+div.eond_simpleWidgetStyle.black h2 { color:#999; }
+
+/************************************************************
+① 심플 라인 스타일
+************************************************************/
+div.eond_simpleWidgetStyle.simple{}
+
+/************************************************************
+② 도트 라인 스타일
+************************************************************/
+div.eond_simpleWidgetStyle.dotted{border-style:dotted}

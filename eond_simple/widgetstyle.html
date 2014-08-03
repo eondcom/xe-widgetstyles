@@ -1,0 +1,56 @@
+<!--// StyleSheet -->
+<!--%import("style.css")-->
+
+<!--// wsStyleSet -->
+<!--@if($widgetstyle_extar_var->ws_styleset == "dotted")-->
+	{@ $_wsClassName = "dotted"}
+<!--@else-->
+	{@ $_wsClassName = "simple"}
+<!--@end-->
+
+<!--// wsClassName -->
+<!--@if($widgetstyle_extra_var->ws_colorset == "black")-->
+    {@ $_wsClassName = "black"}
+<!--@elseif($widgetstyle_extra_var->ws_colorset == "white")-->
+    {@ $_wsClassName = "white"}
+<!--@else-->
+    {@ $_wsClassName = $layout_info->colorset}
+<!--@end-->
+
+<!--// wsLineBorder -->
+<!--@if($widgetstyle_extar_var->ws_lineborder == "1")-->
+	{@ $_wsLineBorder = "1"}
+<!--@elseif($widgetstyle_extar_var->ws_lineborder == "3")-->
+	{@ $_wsLineBorder = "3"}
+<!--@elseif($widgetstyle_extar_var->ws_lineborder == "4")-->
+	{@ $_wsLineBorder = "4"}
+<!--@elseif($widgetstyle_extar_var->ws_lineborder == "5")-->
+	{@ $_wsLineBorder = "5"}
+<!--@else-->
+	{@ $_wsLineBorder = "2"}
+<!--@end-->
+
+<!--// wsTextAlign -->
+<!--@if($widgetstyle_extar_var->ws_textalign == "center")-->
+	{@ $_wsTextAlign = "center"}
+<!--@elseif($widgetstyle_extar_var->ws_textalign == "right")-->
+	{@ $_wsTextAlign = "right"}
+<!--@else-->
+	{@ $_wsTextAlign = "left"}
+<!--@end-->
+
+{@ $ws_more_url = trim($widgetstyle_extra_var->ws_more_url); }
+
+
+<div class="eond_simpleWidgetStyle {$_wsStyleSet} {$_wsClassName}">
+    <h2 style="border-width:{$_wsLineBorder}px;text-align:{$_wsTextAlign};">{$widgetstyle_extra_var->ws_title}</h2>
+        <!--@if($ws_more_url)-->
+            <!--@if(strtolower(substr($ws_more_url,0,4))=='http')-->
+                <a href="{$ws_more_url}" class="widgetMoreLink">
+            <!--@else-->
+                <a href="http://{$ws_more_url}" class="widgetMoreLink">
+            <!--@end-->
+            {$widgetstyle_extra_var->ws_more_text}</a>
+        <!--@end-->
+    {$widget_content}
+</div>
